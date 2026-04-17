@@ -1,0 +1,31 @@
+{
+  "name": "tenor-scrap-api",
+  "version": "1.0.0",
+  "description": "Custom Tenor search/view API by scraping tenor.com",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "build:css": "tailwindcss -i ./web/styles/input.css -o ./public/assets/styles.css --minify",
+    "build": "npm run build:css",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "dev:ui": "tailwindcss -i ./web/styles/input.css -o ./public/assets/styles.css --watch"
+  },
+  "keywords": [
+    "tenor",
+    "scraping",
+    "api"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

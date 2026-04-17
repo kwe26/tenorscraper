@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenor Scrap API Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="min-h-screen">
+  <main class="mx-auto w-full max-w-6xl px-4 py-8 md:px-8">
+    <header class="panel mb-8 p-6 md:p-8">
+      <p class="font-mono text-sm uppercase tracking-wider text-accent">Scraping API</p>
+      <h1 class="font-display text-4xl uppercase leading-tight md:text-6xl">Tenor Custom Search and View</h1>
+      <p class="mt-4 max-w-3xl text-base md:text-lg">Use this page to test cached scraping endpoints and copy implementation snippets for different stacks.</p>
+    </header>
+
+    <section class="grid gap-6 lg:grid-cols-2">
+      <article class="panel p-5 md:p-6">
+        <h2 class="font-display text-2xl uppercase">Search</h2>
+        <p class="mt-2 text-sm">GET /search?q=...&page=...</p>
+        <div class="mt-4 grid gap-3">
+          <label class="text-sm font-semibold" for="searchQuery">Query</label>
+          <input id="searchQuery" class="text-input" placeholder="onk" value="onk" />
+          <label class="text-sm font-semibold" for="searchPage">Page</label>
+          <input id="searchPage" class="text-input" type="number" min="1" value="1" />
+          <button id="searchBtn" class="btn-primary">Run Search</button>
+        </div>
+        <pre id="searchOutput" class="mt-4 max-h-80 overflow-auto rounded-xl border-2 border-border bg-zinc-950 p-4 font-mono text-xs text-zinc-100"></pre>
+      </article>
+
+      <article class="panel p-5 md:p-6">
+        <h2 class="font-display text-2xl uppercase">View</h2>
+        <p class="mt-2 text-sm">GET /view?url=...</p>
+        <div class="mt-4 grid gap-3">
+          <label class="text-sm font-semibold" for="viewUrl">Tenor View URL</label>
+          <input id="viewUrl" class="text-input" value="https://tenor.com/view/well-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997" />
+          <button id="viewBtn" class="btn-primary">Run View</button>
+        </div>
+        <pre id="viewOutput" class="mt-4 max-h-80 overflow-auto rounded-xl border-2 border-border bg-zinc-950 p-4 font-mono text-xs text-zinc-100"></pre>
+      </article>
+    </section>
+
+    <section class="panel mt-8 p-5 md:p-6">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h2 class="font-display text-2xl uppercase">Code Samples</h2>
+        <div class="flex flex-wrap gap-2" id="langTabs"></div>
+      </div>
+      <p class="mt-2 text-sm">Samples call local endpoints and print JSON output.</p>
+      <pre id="codeOutput" class="mt-4 overflow-auto rounded-xl border-2 border-border bg-zinc-950 p-4 font-mono text-xs text-zinc-100"></pre>
+      <button id="copyCodeBtn" class="btn-secondary mt-4">Copy Sample</button>
+    </section>
+
+    <section class="panel mt-8 p-5 md:p-6">
+      <h2 class="font-display text-2xl uppercase">Cache Metrics</h2>
+      <p class="mt-2 text-sm">Live stats from /cache/stats</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <button id="cacheBtn" class="btn-primary">Refresh Stats</button>
+      </div>
+      <pre id="cacheOutput" class="mt-4 overflow-auto rounded-xl border-2 border-border bg-zinc-950 p-4 font-mono text-xs text-zinc-100"></pre>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

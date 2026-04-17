@@ -1,29 +1,29 @@
 const $ = (id) => document.getElementById(id);
 
 const samples = {
-  curl: `curl "http://localhost:3000/search?q=onk&page=1"
-curl "http://localhost:3000/view?url=https%3A%2F%2Ftenor.com%2Fview%2Fwell-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997"`,
-  javascript: `const search = await fetch('http://localhost:3000/search?q=onk&page=1');
+  curl: `curl "https://randomscrapapi.kwe26.tech/search?q=onk&page=1"
+curl "https://randomscrapapi.kwe26.tech/view?url=https%3A%2F%2Ftenor.com%2Fview%2Fwell-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997"`,
+  javascript: `const search = await fetch('https://randomscrapapi.kwe26.tech/search?q=onk&page=1');
 console.log(await search.json());
 
 const view = await fetch(
-  'http://localhost:3000/view?url=' + encodeURIComponent('https://tenor.com/view/well-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997')
+  'https://randomscrapapi.kwe26.tech/view?url=' + encodeURIComponent('https://tenor.com/view/well-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997')
 );
 console.log(await view.json());`,
   python: `import requests
 
-search = requests.get('http://localhost:3000/search', params={'q': 'onk', 'page': 1})
+search = requests.get('https://randomscrapapi.kwe26.tech/search', params={'q': 'onk', 'page': 1})
 print(search.json())
 
-view = requests.get('http://localhost:3000/view', params={
+view = requests.get('https://randomscrapapi.kwe26.tech/view', params={
   'url': 'https://tenor.com/view/well-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997'
 })
 print(view.json())`,
-  php: `$search = file_get_contents('http://localhost:3000/search?q=onk&page=1');
+  php: `$search = file_get_contents('https://randomscrapapi.kwe26.tech/search?q=onk&page=1');
 echo $search;
 
 $url = urlencode('https://tenor.com/view/well-done-done-okay-okay-saumensaha-ok-baby-gif-17342975178417556997');
-$view = file_get_contents('http://localhost:3000/view?url=' . $url);
+$view = file_get_contents('https://randomscrapapi.kwe26.tech/view?url=' . $url);
 echo $view;`
 };
 
